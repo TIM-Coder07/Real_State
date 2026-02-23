@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="w-full fixed top-0 z-50 bg-blue-900 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="#">
+          <img src="img/logo.jpg" alt="Company Logo" class="h-12 w-auto rounded-full shadow-md">
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="toggle-button" class="flex flex-col justify-between w-6 h-6 md:hidden focus:outline-none">
+        <span class="block h-0.5 w-full bg-white rounded"></span>
+        <span class="block h-0.5 w-full bg-white rounded"></span>
+        <span class="block h-0.5 w-full bg-white rounded"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div id="navbar-links" class="hidden md:flex space-x-6 text-white md:items-center md:flex-row flex-col w-full md:w-auto md:bg-transparent bg-blue-900 absolute md:static left-0 md:top-auto top-full md:rounded-none rounded-b-2xl overflow-hidden transition-all duration-500 ease-in-out">
+        <a href="index.html" class="block md:inline-block px-6 py-3 hover:bg-yellow-500 hover:text-white transition">Home</a>
+        <a href="about.html" class="block md:inline-block px-6 py-3 hover:bg-yellow-500 hover:text-white transition">About</a>
+        <a href="proparty.html" class="block md:inline-block px-6 py-3 hover:bg-yellow-500 hover:text-white transition">Property</a>
+        <a href="blog.html" class="block md:inline-block px-6 py-3 hover:bg-yellow-500 hover:text-white transition">Blog</a>
+        <a href="contact.html" class="block md:inline-block px-6 py-3 hover:bg-yellow-500 hover:text-white transition">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white pt-36 pb-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Find Your Dream Property</h1>
+    <p class="text-lg md:text-xl mb-6">We help you buy, sell, and rent properties with ease.</p>
+    <a href="#services" class="bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-full transition">Explore Services</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+      <p class="text-gray-600 mb-12">Helping you find your dream property with ease</p>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Buy Property -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+          <img src="img/buy.png" alt="Buy Property" class="mx-auto w-20 mb-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Buy Property</h3>
+          <p class="text-gray-600 text-sm">Find the perfect home or commercial property to purchase with our expert guidance.</p>
+        </div>
+
+        <!-- Sell Property -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+          <img src="img/sell.png" alt="Sell Property" class="mx-auto w-20 mb-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Sell Property</h3>
+          <p class="text-gray-600 text-sm">Get the best value for your property through our trusted selling process.</p>
+        </div>
+
+        <!-- Rent Property -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+          <img src="img/rent.png" alt="Rent Property" class="mx-auto w-20 mb-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Rent Property</h3>
+          <p class="text-gray-600 text-sm">Discover rental options for apartments, houses, and commercial spaces.</p>
+        </div>
+
+        <!-- Consulting -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2">
+          <img src="img/consulting.png" alt="Consulting" class="mx-auto w-20 mb-4">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Consulting</h3>
+          <p class="text-gray-600 text-sm">Receive expert advice on investment, property valuation, and market trends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8 text-center">
+    <p>&copy; 2026 Real Estate Company. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const toggleBtn = document.getElementById("toggle-button");
+    const navLinks = document.getElementById("navbar-links");
+
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>

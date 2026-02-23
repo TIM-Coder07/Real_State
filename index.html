@@ -20,11 +20,11 @@
 
       <!-- Navbar -->
       <nav
-        class="w-full flex items-center justify-between px-6 py-4 fixed top-0 z-50"
+        class="w-full flex items-center justify-between px-6 py-4 fixed top-0 z-50 bg-blue-900 shadow-md"
       >
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="#" onclick="reloadPage()">
+          <a href="#">
             <img
               src="img/logo.jpg"
               alt="Company Logo"
@@ -33,17 +33,7 @@
           </a>
         </div>
 
-        <!-- Toggle Button for Mobile -->
-        <button
-          id="toggle-button"
-          class="flex flex-col justify-between w-6 h-6 md:hidden focus:outline-none"
-        >
-          <span class="block h-0.5 w-full bg-white rounded"></span>
-          <span class="block h-0.5 w-full bg-white rounded"></span>
-          <span class="block h-0.5 w-full bg-white rounded"></span>
-        </button>
-
-        <!-- Navbar Links (Desktop) -->
+        <!-- Desktop Links -->
         <div class="hidden md:flex space-x-6 text-white">
           <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
           <a href="about.html" class="hover:text-yellow-300 transition"
@@ -57,44 +47,46 @@
             >Let's Talk</a
           >
         </div>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          id="toggle-button"
+          class="flex flex-col justify-between w-6 h-6 md:hidden focus:outline-none"
+        >
+          <span class="block h-0.5 w-full bg-white rounded"></span>
+          <span class="block h-0.5 w-full bg-white rounded"></span>
+          <span class="block h-0.5 w-full bg-white rounded"></span>
+        </button>
       </nav>
 
-      <!-- Side Drawer (Mobile) -->
+      <!-- Mobile Slide Menu -->
       <div
         id="mobile-menu"
-        class="fixed top-0 right-0 h-full w-64 bg-gray-900 bg-opacity-95 transform translate-x-full transition-transform duration-300 z-40 md:hidden"
+        class="fixed top-0 right-0 h-full w-64 bg-blue-900/70 backdrop-blur-md text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-40 shadow-lg"
       >
-        <div class="flex justify-end p-4">
-          <button id="close-button" class="text-white text-2xl">&times;</button>
+        <div class="flex flex-col items-center space-y-6 mt-20">
+          <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+          <a href="about.html" class="hover:text-yellow-300 transition"
+            >About</a
+          >
+          <a href="proparty.html" class="hover:text-yellow-300 transition"
+            >Property</a
+          >
+          <a href="blog.html" class="hover:text-yellow-300 transition">Blog</a>
+          <a href="contact.html" class="hover:text-yellow-300 transition"
+            >Let's Talk</a
+          >
         </div>
-        <ul class="flex flex-col space-y-6 mt-10 text-white text-lg px-6">
-          <li>
-            <a href="index.html" class="hover:text-yellow-300 transition"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="about.html" class="hover:text-yellow-300 transition"
-              >About</a
-            >
-          </li>
-          <li>
-            <a href="proparty.html" class="hover:text-yellow-300 transition"
-              >Property</a
-            >
-          </li>
-          <li>
-            <a href="blog.html" class="hover:text-yellow-300 transition"
-              >Blog</a
-            >
-          </li>
-          <li>
-            <a href="contact.html" class="hover:text-yellow-300 transition"
-              >Let's Talk</a
-            >
-          </li>
-        </ul>
       </div>
+
+      <script>
+        const toggleBtn = document.getElementById("toggle-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        toggleBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("translate-x-full");
+        });
+      </script>
 
       <!-- Main Content -->
       <div
@@ -653,85 +645,140 @@
 
     <!-- **********************************FOOTER************************** -->
     <footer class="bg-gray-900 text-gray-300 py-16 px-6 md:px-20 lg:px-40">
+      <!-- Footer Sections -->
+      <div class="container grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+        <!-- Brand / About -->
+        <div class="footer-section">
+          <h3 class="footer-logo text-2xl font-bold text-yellow-500 mb-2">
+            Oakberry
+          </h3>
+          <p class="footer-tagline uppercase text-sm mb-4 tracking-widest">
+            REAL ESTATE AGENCY
+          </p>
+          <p class="footer-text mb-4 text-gray-400">
+            A small river named Duden flows by their place and supplies it with
+            the necessary regelialia.
+          </p>
+          <div class="footer-socials flex space-x-4">
+            <a href="#" class="hover:text-yellow-500 transition"
+              ><img src="icons/facebook.svg" alt="Facebook" class="w-6 h-6"
+            /></a>
+            <a href="#" class="hover:text-yellow-500 transition"
+              ><img src="icons/twitter.svg" alt="Twitter" class="w-6 h-6"
+            /></a>
+            <a href="#" class="hover:text-yellow-500 transition"
+              ><img src="icons/instagram.svg" alt="Instagram" class="w-6 h-6"
+            /></a>
+          </div>
+        </div>
 
-  <!-- Footer Sections -->
-  <div class="container grid grid-cols-1 md:grid-cols-5 gap-12 mb-12">
+        <!-- Offers -->
+        <div class="footer-section">
+          <h4 class="text-xl font-semibold mb-4 text-gray-100">Offers</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Properties</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition">Agents</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition">Locations</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Clients Support</a
+              >
+            </li>
+          </ul>
+        </div>
 
-    <!-- Brand / About -->
-    <div class="footer-section">
-      <h3 class="footer-logo text-2xl font-bold text-yellow-500 mb-2">Oakberry</h3>
-      <p class="footer-tagline uppercase text-sm mb-4 tracking-widest">REAL ESTATE AGENCY</p>
-      <p class="footer-text mb-4 text-gray-400">
-        A small river named Duden flows by their place and supplies it with the necessary regelialia.
-      </p>
-      <div class="footer-socials flex space-x-4">
-        <a href="#" class="hover:text-yellow-500 transition"><img src="icons/facebook.svg" alt="Facebook" class="w-6 h-6"></a>
-        <a href="#" class="hover:text-yellow-500 transition"><img src="icons/twitter.svg" alt="Twitter" class="w-6 h-6"></a>
-        <a href="#" class="hover:text-yellow-500 transition"><img src="icons/instagram.svg" alt="Instagram" class="w-6 h-6"></a>
+        <!-- Company -->
+        <div class="footer-section">
+          <h4 class="text-xl font-semibold mb-4 text-gray-100">Company</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition">Home</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition">About</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition">Blog</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4 class="text-xl font-semibold mb-4 text-gray-100">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >User's Guide</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Support Center</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-500 transition"
+                >Press Info</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h4 class="text-xl font-semibold mb-4 text-gray-100">
+            Have a Question?
+          </h4>
+          <ul class="space-y-3 text-gray-400">
+            <li class="flex items-center gap-2">
+              <img src="icons/map-pin.svg" alt="Address" class="w-5 h-5" />
+              Mirpur -11, Dhaka, Bangladesh
+            </li>
+            <li class="flex items-center gap-2">
+              <img src="icons/phone.svg" alt="Phone" class="w-5 h-5" /> +880
+              1234 5678
+            </li>
+            <li class="flex items-center gap-2">
+              <img src="icons/mail.svg" alt="Email" class="w-5 h-5" />
+              info@yourdomain.com
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <!-- Offers -->
-    <div class="footer-section">
-      <h4 class="text-xl font-semibold mb-4 text-gray-100">Offers</h4>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-yellow-500 transition">Properties</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Agents</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Locations</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Clients Support</a></li>
-      </ul>
-    </div>
+      <!-- Footer Bottom -->
+      <div
+        class="footer-bottom border-t border-gray-700 pt-6 text-center text-gray-500 text-sm"
+      >
+        <p>
+          Copyright ©2025 All rights reserved | This template is made with ❤️ by
+          DIPTI ABASHON LTD
+        </p>
+      </div>
+    </footer>
 
-    <!-- Company -->
-    <div class="footer-section">
-      <h4 class="text-xl font-semibold mb-4 text-gray-100">Company</h4>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-yellow-500 transition">Home</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">About</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Blog</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Contact Us</a></li>
-      </ul>
-    </div>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h4 class="text-xl font-semibold mb-4 text-gray-100">Quick Links</h4>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-yellow-500 transition">Terms & Conditions</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">User's Guide</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Support Center</a></li>
-        <li><a href="#" class="hover:text-yellow-500 transition">Press Info</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-section">
-      <h4 class="text-xl font-semibold mb-4 text-gray-100">Have a Question?</h4>
-      <ul class="space-y-3 text-gray-400">
-        <li class="flex items-center gap-2">
-          <img src="icons/map-pin.svg" alt="Address" class="w-5 h-5"> Mirpur -11, Dhaka, Bangladesh
-        </li>
-        <li class="flex items-center gap-2">
-          <img src="icons/phone.svg" alt="Phone" class="w-5 h-5"> +880 1234 5678
-        </li>
-        <li class="flex items-center gap-2">
-          <img src="icons/mail.svg" alt="Email" class="w-5 h-5"> info@yourdomain.com
-        </li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div class="footer-bottom border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
-    <p>
-      Copyright ©2025 All rights reserved | This template is made with ❤️ by DIPTI ABASHON LTD
-    </p>
-  </div>
-
-</footer>
-
-<!-- Tailwind CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- https://preview.colorlib.com/theme/oakberry/# -->
+    <!-- https://preview.colorlib.com/theme/oakberry/# -->
+  </body>
+</html>
