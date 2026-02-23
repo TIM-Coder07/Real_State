@@ -9,6 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body>
@@ -40,43 +42,70 @@
 
     <!-- *****************About Section ********************-->
 
-    <section id="about">
-      <div class="about_head">
-        <h2><span>About Us</span></h2>
+    <section id="about" class="py-16 bg-gray-50">
+      <!-- Heading -->
+      <div class="about_head text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900">
+          <span>About Us</span>
+        </h2>
       </div>
 
-      <div class="about_con">
-        <p>
-          <strong>Lorem ipsum dolor,</strong> sit amet consectetur adipisicing
-          elit. Facere, neque omnis. Esse sequi maxime natus quia fuga nisi
-          possimus unde nemo atque deleniti eveniet eos labore praesentium animi
-          voluptatibus voluptatum, nihil, dolorum cupiditate reprehenderit harum
-          adipisicing elit. Facere, neque omnis. Esse sequi maxime natus quia
-          fuga nisi possimus unde nemo atque deleniti eveniet eos labore
-          praesentium animi voluptatibus voluptatum, nihil, dolorum cupiditate
-          reprehenderit harum adipisicing elit. Facere, neque omnis. Esse sequi
-        </p>
-        <div class="about_img">
-          <img id="img" src="img/about1.jpg" alt="Rotating Image" />
+      <!-- First Section -->
+      <div
+        class="about_con flex flex-col md:flex-row items-center md:items-start mb-12 max-w-6xl mx-auto gap-8 px-4 md:px-0"
+      >
+        <!-- Text -->
+        <div class="flex-1 text-gray-700 text-base md:text-lg">
+          <p>
+            <strong>Lorem ipsum dolor,</strong> sit amet consectetur adipisicing
+            elit. Facere, neque omnis. Esse sequi maxime natus quia fuga nisi
+            possimus unde nemo atque deleniti eveniet eos labore praesentium
+            animi voluptatibus voluptatum, nihil, dolorum cupiditate
+            reprehenderit harum adipisicing elit. Facere, neque omnis. Esse
+            sequi maxime natus quia fuga nisi possimus unde nemo atque deleniti
+            eveniet eos labore praesentium animi voluptatibus voluptatum, nihil,
+            dolorum cupiditate reprehenderit harum adipisicing elit. Facere,
+            neque omnis.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="flex-1">
+          <img
+            src="img/about1.jpg"
+            alt="About Image"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
         </div>
       </div>
 
-      <div class="about_con">
-        <div class="about_img">
-          <img id="img" src="img/about4.jpg" alt="Rotating Image" />
+      <!-- Second Section -->
+      <div
+        class="about_con flex flex-col md:flex-row-reverse items-center md:items-start max-w-6xl mx-auto gap-8 px-4 md:px-0"
+      >
+        <!-- Text -->
+        <div class="flex-1 text-gray-700 text-base md:text-lg">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere,
+            neque omnis. Esse sequi maxime natus quia fuga nisi possimus unde
+            nemo atque deleniti eveniet eos labore praesentium animi
+            voluptatibus voluptatum, nihil, dolorum cupiditate reprehenderit
+            harum adipisicing elit. Facere, neque omnis. Esse sequi maxime natus
+            quia fuga nisi possimus unde nemo atque deleniti eveniet eos labore
+            praesentium animi voluptatibus voluptatum, nihil, dolorum cupiditate
+            reprehenderit harum adipisicing elit. Facere, neque omnis.
+          </p>
         </div>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere,
-          neque omnis. Esse sequi maxime natus quia fuga nisi possimus unde nemo
-          atque deleniti eveniet eos labore praesentium animi voluptatibus
-          voluptatum, nihil, dolorum cupiditate reprehenderit harum adipisicing
-          elit. Facere, neque omnis. Esse sequi maxime natus quia fuga nisi
-          possimus unde nemo atque deleniti eveniet eos labore praesentium animi
-          voluptatibus voluptatum, nihil, dolorum cupiditate reprehenderit harum
-          adipisicing elit. Facere, neque omnis. Esse sequi
-        </p>
+
+        <!-- Image -->
+        <div class="flex-1">
+          <img
+            src="img/about4.jpg"
+            alt="About Image"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
       </div>
-      <!-- ****************************TEAAM SECTION************************ -->
     </section>
 
     <!-- **********************************FOOTER************************** -->
