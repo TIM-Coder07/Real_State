@@ -1,32 +1,33 @@
-window.addEventListener('load', function () {
-    document.getElementById('loadingMessage').style.display = 'none';
+window.addEventListener("load", function () {
+  document.getElementById("loadingMessage").style.display = "none";
+});
+
+// ******************NAVBAR***********************
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("toggle-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  toggleBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (mobileMenu.style.maxHeight) {
+      // close menu
+      mobileMenu.style.maxHeight = null;
+    } else {
+      // open menu
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+    }
   });
-  
-  // ******************NAVBAR***********************
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('toggle-button');
-    const navbarLinks = document.getElementById('navbar-links');
-  
-    toggleButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navbarLinks.classList.toggle('active');
-    });
-  
-    document.addEventListener('click', (e) => {
-        if (navbarLinks.classList.contains('active') && !navbarLinks.contains(e.target)) {
-            navbarLinks.classList.remove('active');
-        }
-    });
-  
-    navbarLinks.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+
+  document.addEventListener("click", function (e) {
+    if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      mobileMenu.style.maxHeight = null;
+    }
   });
-  
-  
-  function reloadPage() {
-    location.reload();
-  }
+});
+
+function reloadPage() {
+  location.reload();
+}
 // // Commented for better readability*****************
 // window.addEventListener('scroll', function () {
 //   const navbar = document.querySelector('.navbar');
@@ -59,8 +60,8 @@ window.addEventListener('load', function () {
 
 //     rollImg.onerror = () => {
 //       console.error(`Image failed to load: ${imgs[i]}`);
-//       i = (i + 1) % imgs.length; 
-//       rollImg.src = imgs[i]; 
+//       i = (i + 1) % imgs.length;
+//       rollImg.src = imgs[i];
 //     };
 
 //     rollImg.src = imgs[i];
@@ -69,79 +70,78 @@ window.addEventListener('load', function () {
 //     console.error("Image element not found.");
 //   }
 
-
 //   setTimeout(changeImg, 2000);
 // }
 
 // changeImg();
 
-window.addEventListener('scroll', function () {
-  const aboutSection = document.querySelector('#about');
+window.addEventListener("scroll", function () {
+  const aboutSection = document.querySelector("#about");
   const aboutPosition = aboutSection.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   // If the about section is visible, add the active class
   if (aboutPosition <= windowHeight * 0.8) {
-    aboutSection.classList.add('active');
+    aboutSection.classList.add("active");
   }
 });
 
 // *********************************PROPERTY***************************
 
-window.addEventListener('scroll', function () {
-  const propertySection = document.querySelector('#Property');
-  const propertyBoxes = document.querySelectorAll('.property_box');
+window.addEventListener("scroll", function () {
+  const propertySection = document.querySelector("#Property");
+  const propertyBoxes = document.querySelectorAll(".property_box");
   const propertyPosition = propertySection.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   if (propertyPosition <= windowHeight * 0.8) {
-    propertySection.classList.add('active');
+    propertySection.classList.add("active");
   }
 
   propertyBoxes.forEach((box, index) => {
     const boxPosition = box.getBoundingClientRect().top;
     if (boxPosition <= windowHeight * 0.8) {
-      box.classList.add('active');
+      box.classList.add("active");
     }
   });
 });
 
 // *********************************CATAGORIES***************************
 
-window.addEventListener('scroll', function () {
-  const categoriesSection = document.querySelector('#categories');
-  const propertyCards = document.querySelectorAll('.property-card');
-  const gridItems = document.querySelectorAll('.grid-item');
-  const countNumbers = document.querySelectorAll('.count_num');
+window.addEventListener("scroll", function () {
+  const categoriesSection = document.querySelector("#categories");
+  const propertyCards = document.querySelectorAll(".property-card");
+  const gridItems = document.querySelectorAll(".grid-item");
+  const countNumbers = document.querySelectorAll(".count_num");
   const categoriesPosition = categoriesSection.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   // Check if the categories section is in the viewport
   if (categoriesPosition <= windowHeight * 0.8) {
-    categoriesSection.classList.add('active');
+    categoriesSection.classList.add("active");
   }
 
   // Animate property cards, grid items, and count numbers individually
   propertyCards.forEach((card) => {
     const cardPosition = card.getBoundingClientRect().top;
     if (cardPosition <= windowHeight * 0.8) {
-      card.classList.add('active');
+      card.classList.add("active");
     }
   });
 
   gridItems.forEach((item) => {
     const itemPosition = item.getBoundingClientRect().top;
     if (itemPosition <= windowHeight * 0.8) {
-      item.classList.add('active');
+      item.classList.add("active");
     }
   });
 
   countNumbers.forEach((count) => {
     const countPosition = count.getBoundingClientRect().top;
     if (countPosition <= windowHeight * 0.8) {
-      count.classList.add('active');
+      count.classList.add("active");
       // For counting numbers, animate the numbers incrementally
-      const target = parseInt(count.getAttribute('data-target'));
+      const target = parseInt(count.getAttribute("data-target"));
       let current = 0;
       const interval = setInterval(() => {
         current += 1;
@@ -154,28 +154,27 @@ window.addEventListener('scroll', function () {
   });
 });
 
-
 // *********************************COUNTER***************************
 
-// 
+//
 // *********************************TESTIMONIALS***************************
 
-window.addEventListener('scroll', function () {
-  const testimonialSection = document.querySelector('#testimonial');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
+window.addEventListener("scroll", function () {
+  const testimonialSection = document.querySelector("#testimonial");
+  const testimonialCards = document.querySelectorAll(".testimonial-card");
   const testimonialPosition = testimonialSection.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
   // Check if the testimonial section is in the viewport
   if (testimonialPosition <= windowHeight * 0.8) {
-    testimonialSection.classList.add('active');
+    testimonialSection.classList.add("active");
   }
 
   // Animate testimonial cards when they enter the viewport
   testimonialCards.forEach((card) => {
     const cardPosition = card.getBoundingClientRect().top;
     if (cardPosition <= windowHeight * 0.8) {
-      card.classList.add('active');
+      card.classList.add("active");
     }
   });
 });
@@ -183,19 +182,16 @@ window.addEventListener('scroll', function () {
 // *********************************FOOTER***************************
 
 // Select all footer sections
-const footerSections = document.querySelectorAll('.footer-section');
+const footerSections = document.querySelectorAll(".footer-section");
 
-window.addEventListener('scroll', () => {
-  footerSections.forEach(section => {
+window.addEventListener("scroll", () => {
+  footerSections.forEach((section) => {
     const sectionPosition = section.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
     // Trigger animation when section is visible
     if (sectionPosition <= windowHeight * 0.85) {
-      section.classList.add('active');
+      section.classList.add("active");
     }
   });
 });
-
-
-
